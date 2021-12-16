@@ -42,6 +42,7 @@
                             <th>no</th>
                             <th>nama Guru</th>
                             <th>role</th>
+                            <th>email</th>
                             <th>action</th>
                             <th></th>
                         </tr>
