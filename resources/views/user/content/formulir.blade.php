@@ -43,7 +43,7 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="namalengkap">asal sekolah :</label>
+                            <label for="namalengkap">Asal Sekolah :</label>
                             <input type="text" name="school" class="form-control" id="namalengkap"
                                 placeholder="Enter fullname...">
                             @if ($errors->has('school'))
@@ -63,7 +63,7 @@
                             </label>
                         </div>
                         <div class="form-group">
-                            <label for="tp2">tempat Lahir :</label>
+                            <label for="tp2">Tempat Lahir :</label>
                             <input type="string" name="place" class="form-control" id="tp2" placeholder="tempat Lahir...">
                             @if ($errors->has('place'))
                                 <span class="text-danger">{{ $errors->first('place') }}</span>

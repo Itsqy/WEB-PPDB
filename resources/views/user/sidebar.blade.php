@@ -42,7 +42,6 @@
 
 
                   @elseif(Auth::user()->role == 'Guru')
-
                       <li class="nav-item">
                           <a href="/dashboard" href="#base">
                               <i class="fas icon-pie-chart"></i>

@@ -69,15 +69,20 @@
 
                             <h4 style="text-align: start; margin-top:50px"> STATUS KELULUSAN :</h4>
                             <h3><strong>
-                                    @if ($formulir->status == 1)
-                                        <span class="badge bg-success"> <i class="fas fa-check">lolos </i></span>
-                                    @elseif ($formulir->status == 2)
-                                        <span class="badge bg-primary"> <i class="fas fa-history">Pending
-                                            </i></span>
-                                    @else
-                                        <span class="badge bg-warning"> <i class="fas fa-times"> &NonBreakingSpace; Tidak
-                                                Lolos
-                                            </i></span>
+                                    @if ($formulir->nilai1 + $formulir->nilai2 >= 160)
+                                        {{-- <th>status :</th> --}}
+                                        <td> <span class="badge bg-success"> <i class="fas fa-check">lolos </i></span>
+                                        </td>
+                                    @elseif($formulir->nilai1 + $formulir->nilai2 < 160 && $formulir->nilai1
+                                            + $formulir->nilai1 > 0)
+                                            {{-- <th>status :</th> --}}
+                                            <td> <span class="badge bg-danger"> <i class="fas fa-history">Belum
+                                                        Lolos</i></span></td>
+                                        @elseif($formulir->nilai1 + $formulir->nilai2 == 0)
+                                            {{-- <th>status :</th> --}}
+                                            <td> <span class="badge bg-warning"><i class="fas fa-history">Pending</i></span>
+                                            </td>
+
 
                                     @endif
                                 </strong></h3>
