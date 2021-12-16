@@ -44,12 +44,27 @@
                   @elseif(Auth::user()->role == 'Guru')
 
                       <li class="nav-item">
-                          <a href="{{ route('show.table') }}" href="#base">
-                              <i class="fas fa-layer-group"></i>
-                              <p></p>
+                          <a href="/dashboard" href="#base">
+                              <i class="fas icon-pie-chart"></i>
+                              <p>Dashboard</p>
                               {{-- <span class="caret"></span> --}}
                           </a>
 
+                      </li>
+                      <li class="nav-item">
+                          <a href="{{ route('show.table') }}" href="#base">
+                              <i class="fas fa-layer-group"></i>
+                              <p>Index</p>
+                              {{-- <span class="caret"></span> --}}
+                          </a>
+
+                      </li>
+                      <li class="nav-item">
+                          <a href="{{ route('absen') }}" href="#base">
+                              <i class="fas fa-pen"></i>
+                              <p>Absen</p>
+                              {{-- <span class="caret"></span> --}}
+                          </a>
                       </li>
 
                   @else

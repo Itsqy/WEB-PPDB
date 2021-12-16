@@ -170,14 +170,15 @@
 
                 </tr>
                 <tr>
-                    @if ($formulir->status == 1)
-
+                    @if ($formulir->nilai1 + $formulir->nilai2 >= 160)
                         <th>status :</th>
                         <td> <span class="badge bg-success"> <i class="fas fa-check">lolos </i></span></td>
-
-                    @else
-                        <th>status :</th>
-                        <td> <span class="badge bg-warning"> <i class="fas fa-history">belum lolos </i></span></td>
+                    @elseif($formulir->nilai1 + $formulir->nilai2 < 160 && $formulir->nilai1
+                            + $formulir->nilai1 > 0) <th>status :</th>
+                            <td> <span class="badge bg-danger"> <i class="fas fa-history">Belum Lolos</i></span></td>
+                        @elseif($formulir->nilai1 + $formulir->nilai2 == 0)
+                            <th>status :</th>
+                            <td> <span class="badge bg-warning"><i class="fas fa-history">Pending</i></span></td>
                     @endif
 
                     {{-- <th>Status :</th>

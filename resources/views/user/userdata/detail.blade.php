@@ -17,7 +17,7 @@
                         <td>REG-2021-{{ str_pad($formulir->id, 5, '0', STR_PAD_LEFT) }}</td>
                     </tr>
                     <tr>
-                        <th>nama pendaftar : </th>
+                        <th>Nama Pendaftar : </th>
                         <td>{{ $formulir->full_name }}</td>
                     </tr>
                     <tr>
@@ -26,21 +26,21 @@
                             {{ \Carbon\Carbon::parse($formulir->birthday)->format('d - F - Y') }}</td>
                     </tr>
                     <tr>
-                        <th>nisn: </th>
+                        <th>Nisn: </th>
                         <td> {{ $formulir->nisn }}</td>
                     </tr>
 
                     <tr>
-                        <th>agama : </th>
+                        <th>Agama : </th>
                         <td> {{ $formulir->agama }}</td>
                     </tr>
 
                     <tr>
-                        <th>anak_ke : </th>
+                        <th>Anak Ke : </th>
                         <td> {{ $formulir->anak_ke }}</td>
                     </tr>
                     <tr>
-                        <th>Jumlah saudara : </th>
+                        <th>Jumlah Saudara : </th>
                         <td> {{ $formulir->jml_saudara }}</td>
                     </tr>
                     <tr>
@@ -68,7 +68,7 @@
                         <td> {{ $formulir->nama_ayah }}</td>
                     </tr>
                     <tr>
-                        <th>nama Ibu : </th>
+                        <th>Nama Ibu : </th>
                         <td> {{ $formulir->nama_ibu }}</td>
                     </tr>
                     <tr>
