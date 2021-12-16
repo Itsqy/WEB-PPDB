@@ -21,7 +21,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('auth.login_new');
+    return view('auth.regis_new');
 });
 Route::match(['get', 'post'], '/register', function () {
     return redirect('login');
