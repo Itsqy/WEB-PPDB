@@ -24,7 +24,7 @@
 
                             <input type="file" value="{{ $formulir->photo }}" name="photo" class="form-control-file"
                                 id="exampleFormControlFile1">
-                            <img src="{{ url('storage/', $formulir->photo) }}" alt=""
+                            <img src="{{ $formulir->photo }}" alt=""
                                 style="max-width: 100px !important; border-radius:5px; mt-5">
 
                             @if ($errors->has('photo'))
@@ -250,7 +250,7 @@
                             <p>*bisa di minta sbelum pembagian ijazah untuk SKHU</p>
                             <input type="file" value="{{ $formulir->iijazah }}" name="ijazah" class="form-control-file"
                                 id="exampleFormControlFile1" placeholder="FIle Harus di isi Kembali">
-                            <img src="{{ url('storage/', $formulir->ijazah) }}" alt=""
+                            <img src="{{ $formulir->ijazah }}" alt=""
                                 style="max-width: 100px !important; border-radius:5px; mt-5">
                             @if ($errors->has('ijazah'))
                                 <span class="text-danger">{{ $errors->first('ijazah') }}</span>
@@ -262,7 +262,7 @@
                             <label for="exampleFormControlFile1">File rapot</label>
                             <input type="file" value="{{ $formulir->rapot }}" name="rapot" class="form-control-file"
                                 id="exampleFormControlFile1" placeholder="FIle Harus di isi Kembali">
-                            <img src="{{ url('storage/', $formulir->rapot) }}" alt=""
+                            <img src="{{ $formulir->rapot }}" alt=""
                                 style="max-width: 100px !important; border-radius:5px; mt-5">
                             @if ($errors->has('rapot'))
                                 <span class="text-danger">{{ $errors->first('rapot') }}</span>
@@ -281,7 +281,7 @@
                             <input type="file" value="{{ $formulir->file_prestasi }}" name="file_prestasi"
                                 class="form-control-file" id="exampleFormControlFile1"
                                 placeholder="FIle Harus di isi Kembali">
-                            <img src="{{ url('storage/', $formulir->file_prestasi) }}" alt=""
+                            <img src="{{ $formulir->file_prestasi }}" alt=""
                                 style="max-width: 100px !important; border-radius:5px; mt-5">
 
                         </div>
