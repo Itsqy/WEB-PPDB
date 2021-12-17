@@ -281,10 +281,27 @@ class FormController extends Controller
         $imageRapot  = $request->file('rapot');
         $imagePrestasi  = $request->file('file_prestasi');
 
-        $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
-        $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
-        $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
-        $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
+        $resultIjazah = '';
+        $resultPhoto = '';
+        $resultPrestasi = '';
+        $resultRapot = '';
+
+        if ($request->hasfile('photo')) {
+            $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
+        }
+        if ($request->hasfile('ijazah')) {
+            $resultPhoto = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
+        }
+        if ($request->hasfile('rapot')) {
+            $resultPhoto = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
+        }
+        if ($request->hasfile('file_prestasi')) {
+            $resultPhoto = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
+        }
+        // kenapa?
+        // $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
+        // $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
+        // $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
 
         $formulir = Formulir::create([
             'full_name' => $request->full_name,
@@ -315,6 +332,8 @@ class FormController extends Controller
             'no_telpibu' => $request->no_telpibu,
             'user_id' => Auth::user()->id,
             //ana push ya?
+            //local udh berantakan
+            //keknya g bisa jalan
 
 
         ]);
