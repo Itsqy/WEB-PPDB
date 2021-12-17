@@ -25,7 +25,7 @@
                 <div class="container card">
                     <div class="row">
                         <div class="col-md-4 border">
-                            <img src="{{ $formulir->photo }}" alt="" class="img-thumbnail w-100">
+                            <img src="{{ url('storage/' . $formulir->photo) }}" alt="" class="img-thumbnail w-100">
                         </div>
                         <div class="col-md-8">
                             <h4 style="text-align: start; margin-top:50px ">NAMA :</h4>
