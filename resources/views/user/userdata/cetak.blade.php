@@ -24,7 +24,7 @@
 <body>
     <div class="container">
         <div class="title text-center mb-5">
-            <h2>Kartu Peserta</h2>
+            <h2>Formulir</h2>
 
         </div>
         <hr class="solid">

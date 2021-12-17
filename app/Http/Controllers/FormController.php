@@ -151,6 +151,22 @@ class FormController extends Controller
             // Storage::delete($formulir->ijazah);
             // Storage::delete($formulir->file_prestasi);
 
+            $imagePhoto  = $request->file('photo');
+            $imageIjazah  = $request->file('ijazah');
+            $imageRapot  = $request->file('rapot');
+            $imagePrestasi  = $request->file('file_prestasi');
+
+            $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
+            $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
+            $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
+            $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
+            // $formulir->update([
+            //     'ijazah' => $result,
+            //     'photo' => $result,
+            //     'rapot' => $result,
+            //     'file_prestasi' => $result,
+            // ]);
+
             $formulir->update([
                 'full_name' => $request->full_name,
                 'nisn' => $request->nisn,
@@ -175,20 +191,12 @@ class FormController extends Controller
                 'phone' => $request->phone,
                 'no_telpayah' => $request->no_telpayah,
                 'no_telpibu' => $request->no_telpibu,
-                'photo'         => $request->file('photo')->store('image-data'),
-                'rapot'         => $request->file('rapot')->store('rapot-data'),
-                'ijazah'         => $request->file('ijazah')->store('ijazah-data'),
-                'file_prestasi'         => $request->file('file_prestasi')->store('prestasi-data'),
+                'photo'         => $resultPhoto,
+                'rapot'         => $resultRapot,
+                'ijazah'         => $resultIjazah,
+                'file_prestasi'         => $resultPrestasi,
             ]);
 
-            // $image  = $request->file(['photo', 'ijazah', 'rapot', 'file_prestasi']);
-            // $result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
-            // $formulir->update([
-            //     'ijazah' => $result,
-            //     'photo' => $result,
-            //     'rapot' => $result,
-            //     'file_prestasi' => $result,
-            // ]);
             // dd($result);
             return view('user.userdata.beforedetail', compact('formulir', 'title'))->with('success', ' EditData berhasil ditambahkan.');
         }
@@ -265,6 +273,19 @@ class FormController extends Controller
 
         ], $pesan);
 
+        //awal nya kan $image yaa
+        //kaya di cloudinarystorage, kalo beda , bkalan nge fek ga?
+        //oalh
+        $imagePhoto  = $request->file('photo');
+        $imageIjazah  = $request->file('ijazah');
+        $imageRapot  = $request->file('rapot');
+        $imagePrestasi  = $request->file('file_prestasi');
+
+        $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
+        $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
+        $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
+        $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
+
         $formulir = Formulir::create([
             'full_name' => $request->full_name,
             'nisn' => $request->nisn,
@@ -286,14 +307,14 @@ class FormController extends Controller
             'pend_akhiri' => $request->pend_akhiri,
             'infoppdb' => $request->infoppdb,
             'prestasi' => $request->prestasi,
-            'photo'         => $request->file('photo')->store('image-data'),
-            'rapot'         => $request->file('rapot')->store('rapot-data'),
-            'ijazah'         => $request->file('ijazah')->store('ijazah-data'),
+            'photo'         => $resultPhoto,
+            'rapot'         => $resultRapot,
+            'ijazah'         => $resultIjazah,
             'phone' => $request->phone,
             'no_telpayah' => $request->no_telpayah,
             'no_telpibu' => $request->no_telpibu,
             'user_id' => Auth::user()->id,
-
+            //ana push ya?
 
 
         ]);
