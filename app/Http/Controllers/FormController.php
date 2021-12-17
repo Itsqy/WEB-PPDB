@@ -306,7 +306,7 @@ class FormController extends Controller
         // ]);
 
         // dd($result);
-        return view('user.userdata.beforedetail', compact('title', 'formulir'));
+        return view('user.userdata.beforedetail', compact('title', 'formulir',));
 
 
 
