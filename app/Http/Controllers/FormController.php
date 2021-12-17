@@ -189,8 +189,8 @@ class FormController extends Controller
                 'rapot' => $result,
                 'file_prestasi' => $result,
             ]);
-            // dd($formulir);
-            return view('user.userdata.beforedetail', compact('formulir', 'title'))->with('success', ' EditData berhasil ditambahkan.');
+            dd($result);
+            // return view('user.userdata.beforedetail', compact('formulir', 'title'))->with('success', ' EditData berhasil ditambahkan.');
         }
     }
 
