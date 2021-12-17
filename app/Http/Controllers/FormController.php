@@ -306,8 +306,8 @@ class FormController extends Controller
             'rapot' => $result,
         ]);
 
-        // dd($user);
-        return view('user.userdata.beforedetail', compact('title', 'formulir'));
+        dd($result);
+        // return view('user.userdata.beforedetail', compact('title', 'formulir'));
 
 
 
