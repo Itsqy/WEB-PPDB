@@ -189,8 +189,8 @@ class FormController extends Controller
                 'rapot' => $result,
                 'file_prestasi' => $result,
             ]);
-            dd($result);
-            // return view('user.userdata.beforedetail', compact('formulir', 'title'))->with('success', ' EditData berhasil ditambahkan.');
+            // dd($result);
+            return view('user.userdata.beforedetail', compact('formulir', 'title'))->with('success', ' EditData berhasil ditambahkan.');
         }
     }
 
@@ -306,8 +306,8 @@ class FormController extends Controller
             'rapot' => $result,
         ]);
 
-        dd($result);
-        // return view('user.userdata.beforedetail', compact('title', 'formulir'));
+        // dd($result);
+        return view('user.userdata.beforedetail', compact('title', 'formulir'));
 
 
 
