@@ -156,10 +156,28 @@ class FormController extends Controller
             $imageRapot  = $request->file('rapot');
             $imagePrestasi  = $request->file('file_prestasi');
 
-            $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
-            $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
-            $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
-            $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
+            $resultIjazah = '';
+            $resultPhoto = '';
+            $resultPrestasi = '';
+            $resultRapot = '';
+
+            if ($request->hasfile('photo')) {
+                $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
+            }
+            if ($request->hasfile('ijazah')) {
+                $resultPhoto = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
+            }
+            if ($request->hasfile('rapot')) {
+                $resultPhoto = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
+            }
+            if ($request->hasfile('file_prestasi')) {
+                $resultPhoto = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
+            }
+
+            // $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
+            // $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
+            // $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
+            // $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
             // $formulir->update([
             //     'ijazah' => $result,
             //     'photo' => $result,
@@ -327,6 +345,7 @@ class FormController extends Controller
             'photo'         => $resultPhoto,
             'rapot'         => $resultRapot,
             'ijazah'         => $resultIjazah,
+            'file_prestasi'  => $resultPrestasi,
             'phone' => $request->phone,
             'no_telpayah' => $request->no_telpayah,
             'no_telpibu' => $request->no_telpibu,
