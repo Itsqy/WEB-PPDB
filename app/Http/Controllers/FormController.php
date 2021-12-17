@@ -175,20 +175,20 @@ class FormController extends Controller
                 'phone' => $request->phone,
                 'no_telpayah' => $request->no_telpayah,
                 'no_telpibu' => $request->no_telpibu,
-                // 'photo'         => $request->file('photo')->store('image-data'),
-                // 'rapot'         => $request->file('rapot')->store('rapot-data'),
-                // 'ijazah'         => $request->file('ijazah')->store('ijazah-data'),
-                // 'file_prestasi'         => $request->file('file_prestasi')->store('prestasi-data'),
+                'photo'         => $request->file('photo')->store('image-data'),
+                'rapot'         => $request->file('rapot')->store('rapot-data'),
+                'ijazah'         => $request->file('ijazah')->store('ijazah-data'),
+                'file_prestasi'         => $request->file('file_prestasi')->store('prestasi-data'),
             ]);
 
-            $image  = $request->file(['photo', 'ijazah', 'rapot', 'file_prestasi']);
-            $result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
-            $formulir->update([
-                'ijazah' => $result,
-                'photo' => $result,
-                'rapot' => $result,
-                'file_prestasi' => $result,
-            ]);
+            // $image  = $request->file(['photo', 'ijazah', 'rapot', 'file_prestasi']);
+            // $result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+            // $formulir->update([
+            //     'ijazah' => $result,
+            //     'photo' => $result,
+            //     'rapot' => $result,
+            //     'file_prestasi' => $result,
+            // ]);
             // dd($result);
             return view('user.userdata.beforedetail', compact('formulir', 'title'))->with('success', ' EditData berhasil ditambahkan.');
         }
@@ -286,9 +286,9 @@ class FormController extends Controller
             'pend_akhiri' => $request->pend_akhiri,
             'infoppdb' => $request->infoppdb,
             'prestasi' => $request->prestasi,
-            // 'photo'         => $request->file('photo')->store('image-data'),
-            // 'rapot'         => $request->file('rapot')->store('rapot-data'),
-            // 'ijazah'         => $request->file('ijazah')->store('ijazah-data'),
+            'photo'         => $request->file('photo')->store('image-data'),
+            'rapot'         => $request->file('rapot')->store('rapot-data'),
+            'ijazah'         => $request->file('ijazah')->store('ijazah-data'),
             'phone' => $request->phone,
             'no_telpayah' => $request->no_telpayah,
             'no_telpibu' => $request->no_telpibu,
@@ -297,8 +297,8 @@ class FormController extends Controller
 
 
         ]);
-        $image  = $request->file(['photo', 'ijazah', 'rapot']);
-        $result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+        // $image  = $request->file(['photo', 'ijazah', 'rapot']);
+        // $result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
         // Formulir::create([
         //     'photo' => $result,
         //     'ijazah' => $result,
