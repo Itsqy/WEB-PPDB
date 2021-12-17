@@ -299,12 +299,11 @@ class FormController extends Controller
         ]);
         $image  = $request->file(['photo', 'ijazah', 'rapot']);
         $result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
-        Formulir::create([
-
-            'ijazah' => $result,
-            'photo' => $result,
-            'rapot' => $result,
-        ]);
+        // Formulir::create([
+        //     'photo' => $result,
+        //     'ijazah' => $result,
+        //     'rapot' => $result,
+        // ]);
 
         // dd($result);
         return view('user.userdata.beforedetail', compact('title', 'formulir'));
