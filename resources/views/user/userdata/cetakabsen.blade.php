@@ -61,7 +61,7 @@
                                                 <tr>
                                                     <td class="col-md-2 border">{{ $i++ }}</td>
                                                     <td>
-                                                        <img src="{{ url('storage/' . $form->photo) }}" alt=""
+                                                        <img src="{{ $form->photo }}" alt=""
                                                             style="max-width: 100px !important; border-radius:5px;">
 
                                                     </td>
