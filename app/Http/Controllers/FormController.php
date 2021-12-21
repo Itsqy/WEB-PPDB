@@ -70,6 +70,7 @@ class FormController extends Controller
             'ijazah.required' => "kalo g ada skhun aja  ",
             'rapot.required' => "rapot ga boleh kosong  ",
             'photo.required' => "photo ga boleh kosong  ",
+            // 'file_prestasi.required' => "photo ga boleh kosong  ",
             'school.required' => "sekolah asal ga boleh kosong  ",
             'place.required' => "tempat lahir ga boleh kosong  ",
             'file_berkas.required' => "file_berkas ga boleh kosong  ",
@@ -104,7 +105,7 @@ class FormController extends Controller
             'photo'         => "required|mimes:png,jpg|max:3072",
             'rapot'         => "required|mimes:pdf,png,jpg|max:3072",
             'ijazah'         => "required|mimes:pdf,jpg,png|max:3072",
-            'file_prestasi'         => "required|mimes:pdf,jpg,png|max:3072",
+            'file_prestasi'         => "mimes:pdf,jpg,png|max:3072",
             'phone' => "required",
             'no_telpayah' => "required",
             'no_telpibu' => "required",
@@ -158,7 +159,7 @@ class FormController extends Controller
 
             // $resultIjazah = '';
             // $resultPhoto = '';
-            // $resultPrestasi = '';
+            $resultPrestasi = '';
             // $resultRapot = '';
 
             // if ($request->hasfile('photo')) {
@@ -170,14 +171,14 @@ class FormController extends Controller
             // if ($request->hasfile('rapot')) {
             //     $resultPhoto = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
             // }
-            // if ($request->hasfile('file_prestasi')) {
-            //     $resultPhoto = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
-            // }
+            if ($request->hasfile('file_prestasi')) {
+                $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
+            }
 
             $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
             $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
             $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
-            $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
+            // $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
             // $formulir->update([
             //     'ijazah' => $resultIjazah,
             //     'photo' => $resultPhoto,
