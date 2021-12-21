@@ -34,7 +34,7 @@ class DashboardController extends Controller
 
 
 
-        return view('user.content.index', compact('title', 'user', 'guru', 'admin', 'lolos', 'pending', 'form', 'auth', 'formulir'));
+        return view('user.content.index', compact('title', 'user', 'guru', 'admin', 'form', 'auth', 'formulir'));
     }
 
     /**
