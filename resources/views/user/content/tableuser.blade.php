@@ -48,56 +48,55 @@
                                             <th>action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        @foreach ($formulir as $form)
-                                            <tr>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>{{ $i++ }}</td>
-                                                        <td>{{ $form->full_name }}</td>
+                                    @foreach ($formulir as $form)
+                                        <tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>{{ $i++ }}</td>
+                                                    <td>{{ $form->full_name }}</td>
 
 
-                                                        <td>
-                                                            <img src="{{ url('storage/' . $form->photo) }}" alt=""
-                                                                style="max-width: 100px !important; border-radius:5px;">
+                                                    <td>
+                                                        <img src="{{ url('storage/' . $form->photo) }}" alt=""
+                                                            style="max-width: 100px !important; border-radius:5px;">
 
-                                                        </td>
-                                                        <td>
-                                                            <img src="{{ url('storage/' . $form->ijazah) }}" alt=""
-                                                                style="max-width: 100px !important; border-radius:5px;">
+                                                    </td>
+                                                    <td>
+                                                        <img src="{{ url('storage/' . $form->ijazah) }}" alt=""
+                                                            style="max-width: 100px !important; border-radius:5px;">
 
-                                                        </td>
-                                                        <td>
-                                                            <img src="{{ url('storage/' . $form->rapot) }}" alt=""
-                                                                style="max-width: 100px !important; border-radius:5px;">
+                                                    </td>
+                                                    <td>
+                                                        <img src="{{ url('storage/' . $form->rapot) }}" alt=""
+                                                            style="max-width: 100px !important; border-radius:5px;">
 
-                                                        </td>
-                                                        <td>
-                                                            <img src="{{ url('storage/' . $form->file_prestasi) }}" alt=""
-                                                                style="max-width: 100px !important; border-radius:5px;">
+                                                    </td>
+                                                    <td>
+                                                        <img src="{{ url('storage/' . $form->file_prestasi) }}" alt=""
+                                                            style="max-width: 100px !important; border-radius:5px;">
 
-                                                        </td>
+                                                    </td>
 
-                                                        <td>
-                                                            <div class="form-button-action">
-                                                                <a href="{{ route('show.berkas', $form->id) }}"
-                                                                    class="btn btn-primary"><i class="fa fa-eye">
-                                                                        detail </i></a>
+                                                    <td>
+                                                        <div class="form-button-action">
+                                                            <a href="{{ route('show.berkas', $form->id) }}"
+                                                                class="btn btn-primary"><i class="fa fa-eye">
+                                                                    detail </i></a>
 
-                                                                <form action="{{ route('download', $form->id) }}">
-                                                                    {{-- @csrf
+                                                            <form action="{{ route('download', $form->id) }}">
+                                                                {{-- @csrf
                                                                         @method('DELETE') --}}
-                                                                    <button type="submit" data-toggle="tooltip" title=""
-                                                                        class="btn btn-link btn-danger">
-                                                                        <i class="fa fa-download"></i>
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </tr>
-                                        @endforeach
+                                                                <button type="submit" data-toggle="tooltip" title=""
+                                                                    class="btn btn-link btn-danger">
+                                                                    <i class="fa fa-download"></i>
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </tr>
+                                    @endforeach
                                 </table>
                             </div>
                         </div>

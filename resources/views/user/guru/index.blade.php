@@ -36,7 +36,6 @@
             </div>
             <div class="card-body">
                 <table class="table table-hover">
-
                     <thead>
                         <tr>
                             <th>no</th>
@@ -47,33 +46,33 @@
                             <th></th>
                         </tr>
                     </thead>
+
                     <tbody>
-                        <tr>
-                            @foreach ($user as $u)
-                        <tr>
-                            <td>{{ $i++ }}</td>
-                            <td>{{ $u->name }}</td>
-                            <td>{{ $u->role }}</td>
-                            <td>{{ $u->email }}</td>
-                            <td>
-                                <form action="{{ route('guru.destroy', $u->id) }}" method="POST"
-                                    onsubmit="return confirm('hapus  {{ $u->name }} ? ')">
-                                    @csrf
-                                    @method('delete')
 
+                        @foreach ($user as $u)
+                            <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>{{ $u->name }}</td>
+                                <td>{{ $u->role }}</td>
+                                <td>{{ $u->email }}</td>
+                                <td>
+                                    {{-- hapus --}}
+                                    <form action="{{ route('guru.destroy', $u->id) }}" method="POST"
+                                        onsubmit="return confirm('hapus  {{ $u->name }} ? ')">
+                                        @csrf
+                                        @method('delete')
 
+                                        {{-- buat edit --}}
+                                        <a href="{{ route('guru.edit', $u->id) }}" class="btn btn-warning"><i
+                                                class="fa fa-edit"></i> Edit </a>
+                                        {{-- button buat hapus --}}
+                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"> Hapus
+                                            </i>
+                                        </button>
 
-                                    {{-- buat edit --}}
-                                    <a href="{{ route('guru.edit', $u->id) }}" class="btn btn-warning"><i
-                                            class="fa fa-edit"></i> edit </a>
-                                    {{-- button buat hapus --}}
-                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"> Hapus
-                                        </i>
-                                    </button>
-
-                                </form>
-                            </td>
-                        </tr>
+                                    </form>
+                                </td>
+                            </tr>
 
 
                         @endforeach

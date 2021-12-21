@@ -11,6 +11,7 @@
 
 
             <div class="card-body" data-aos="zoom-out">
+                {{-- atas nya --}}
                 <div class="container card">
                     <div class="row">
                         <div class="col-md-3">
@@ -22,6 +23,8 @@
                     </div>
 
                 </div>
+
+                {{-- isianya --}}
                 <div class="container card">
                     <div class="row">
                         <div class="col-md-4 border">
@@ -44,6 +47,8 @@
                         </div>
                     </div>
                 </div>
+
+                {{-- bawah , nilainya --}}
                 <div class="container card">
                     <div class="row">
                         <div class="col-md-6 border">

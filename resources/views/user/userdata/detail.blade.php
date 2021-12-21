@@ -98,35 +98,13 @@
                                 @csrf
                                 @method('put')
                                 <div class="form-group">
-
                                     <input type="text" name="nilai1" value=" {{ $formulir->nilai1 }}"
                                         class="form-control">
                                 </div>
                                 <div class="form-group">
-
                                     <input type="text" name="nilai2" value=" {{ $formulir->nilai2 }}"
                                         class="form-control">
                                 </div>
-                                {{-- <div class="form-group">
-
-                                    <input type="text" name="status " value=" {{ $formulir->nilai2 }}"
-                                        class="form-control">
-                                </div> --}}
-                                {{-- <div class="form-group">
-                                    <label for="exampleFormControlSelect1">status :</label>
-                                    <select name="status" class="form-control" id="exampleFormControlSelect1">
-                                        @if ($formulir->nilai1 + $formulir->nilai2 >= 160)
-                                            <option value="1">Lolos</option>
-                                        @elseif($formulir->nilai1 + $formulir->nilai2 <= 160) <option value="2">Belum
-                                                Lolos</option>
-                                            @else <option value="3">
-                                                    Pending</option>
-                                        @endif
-
-
-
-                                    </select>
-                                </div> --}}
                                 <button type="submit" data-toggle="tooltip" title="" class="btn btn-link btn-success">
                                     <i class="fa flaticon-success "></i>
                                 </button>

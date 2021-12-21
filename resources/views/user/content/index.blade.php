@@ -32,7 +32,7 @@
                             <div class="card-body pb-0">
                                 <div class="h1 fw-bold float-right">{{ $formulir }}</div>
                                 <h2 class="mb-2">Formulir</h2>
-                                <p>Tota Form</p>
+                                <p>Total Form</p>
                                 <div class="pull-in sparkline-fix chart-as-background">
                                     <div id="lineChart"><canvas width="327" height="70"
                                             style="display: inline-block; width: 327px; height: 70px; vertical-align: top;"></canvas>

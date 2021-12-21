@@ -24,8 +24,8 @@ class DashboardController extends Controller
 
 
         $formulir = Formulir::count();
-        $pending = Formulir::where('status', '<', 2)->count();
-        $lolos = Formulir::where('status', '>',  1)->count();
+        // $pending = Formulir::where('status', '<', 2)->count();
+        // $lolos = Formulir::where('status', '>',  1)->count();
         $user = User::where('role', '=', 'User')->count();
         $guru = User::where('role', '=', 'Guru')->count();
         $admin = User::where('role', '=', 'Admin')->count();
@@ -44,31 +44,33 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        $title = 'dashboard';
-        $user = Auth::user();
-        $formulir = Formulir::where('user_id', '=', $user->id)->first();
+        // ini rencana nya buat kalo si dasbord mesti lebih dari 1 blade
+        // jadi punya admin gruu ama user dipisah semua
+        // $title = 'dashboard';
+        // $user = Auth::user();
+        // $formulir = Formulir::where('user_id', '=', $user->id)->first();
 
-        if ($formulir) {
-
-
-            //tampilkan dashboard jika sudah mendaftar
-            return view('user.userdata.done', [
-                'user' => $user,
-                'formulir' => $formulir,
-                'title' => $title,
+        // if ($formulir) {
 
 
+        //     //tampilkan dashboard jika sudah mendaftar
+        //     return view('user.userdata.done', [
+        //         'user' => $user,
+        //         'formulir' => $formulir,
+        //         'title' => $title,
 
-            ]);
-        } else {
-            //redirect ke form pendaftaran jika belum mendaftar
-            return view('user.userdata.still', [
-                'user' => $user,
-                'formulir' => $formulir,
-                'title' => $title,
 
-            ]);
-        }
+
+        //     ]);
+        // } else {
+        //     //redirect ke form pendaftaran jika belum mendaftar
+        //     return view('user.userdata.still', [
+        //         'user' => $user,
+        //         'formulir' => $formulir,
+        //         'title' => $title,
+
+        //     ]);}
+
     }
 
     /**

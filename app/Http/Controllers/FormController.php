@@ -197,14 +197,12 @@ class FormController extends Controller
                 'school' => $request->school,
                 'gender' => $request->gender,
                 'tinggal_dengan' => $request->tinggal_dengan,
-
                 'nama_ayah' => $request->nama_ayah,
                 'nama_ibu' => $request->nama_ibu,
                 'kerja_ayah' => $request->kerja_ayah,
                 'kerja_ibu' => $request->kerja_ibu,
                 'pend_akhira' => $request->pend_akhira,
                 'pend_akhiri' => $request->pend_akhiri,
-
                 'prestasi' => $request->prestasi,
                 'phone' => $request->phone,
                 'no_telpayah' => $request->no_telpayah,
@@ -464,7 +462,7 @@ class FormController extends Controller
         $formulir->update([
             'nilai1'          => $request->nilai1,
             'nilai2'      => $request->nilai2,
-            'status'      => $request->status,
+            // 'status'      => $request->status,
 
 
         ]);

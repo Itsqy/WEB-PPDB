@@ -63,7 +63,7 @@
 
         <div class="main-panel">
             @yield('content')
-            {{-- <footer class="footer">
+            <footer class="footer">
                 <div class="container-fluid">
                     <nav class="pull-left">
                         <ul class="nav">
@@ -89,7 +89,7 @@
                             href="https://www.themekita.com">ThemeKita</a>
                     </div>
                 </div>
-            </footer> --}}
+            </footer>
         </div>
 
     </div>
