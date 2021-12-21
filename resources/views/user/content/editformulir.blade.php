@@ -283,7 +283,9 @@
                                 placeholder="FIle Harus di isi Kembali">
                             <img src="{{ $formulir->file_prestasi }}" alt=""
                                 style="max-width: 100px !important; border-radius:5px; mt-5">
-
+                            @if ($errors->has('file_prestasi'))
+                                <span class="text-danger">{{ $errors->first('file_prestasi') }}</span>
+                            @endif
                         </div>
 
                         <div class="card-action">

@@ -178,12 +178,12 @@ class FormController extends Controller
             $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
             $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
             $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
-            $formulir->update([
-                'ijazah' => $resultIjazah,
-                'photo' => $resultPhoto,
-                'rapot' => $resultRapot,
-                'file_prestasi' => $resultPrestasi,
-            ]);
+            // $formulir->update([
+            //     'ijazah' => $resultIjazah,
+            //     'photo' => $resultPhoto,
+            //     'rapot' => $resultRapot,
+            //     'file_prestasi' => $resultPrestasi,
+            // ]);
 
             $formulir->update([
                 'full_name' => $request->full_name,
