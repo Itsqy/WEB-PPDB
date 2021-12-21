@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="../assets/css/demo.css">
 </head>
 
-<body>
+<body data-background-color="dark">
     {{-- data-background-color="dark" --}}
     <div class="wrapper">
         @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
