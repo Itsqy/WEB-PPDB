@@ -157,27 +157,27 @@ class FormController extends Controller
             $imageRapot  = $request->file('rapot');
             $imagePrestasi  = $request->file('file_prestasi');
 
-            // $resultIjazah = '';
-            // $resultPhoto = '';
+            $resultIjazah = '';
+            $resultPhoto = '';
             $resultPrestasi = '';
-            // $resultRapot = '';
+            $resultRapot = '';
 
-            // if ($request->hasfile('photo')) {
-            //     $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
-            // }
-            // if ($request->hasfile('ijazah')) {
-            //     $resultPhoto = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
-            // }
-            // if ($request->hasfile('rapot')) {
-            //     $resultPhoto = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
-            // }
+            if ($request->hasfile('photo')) {
+                $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
+            }
+            if ($request->hasfile('ijazah')) {
+                $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
+            }
+            if ($request->hasfile('rapot')) {
+                $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
+            }
             if ($request->hasfile('file_prestasi')) {
                 $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
             }
 
-            $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
-            $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
-            $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
+            // $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
+            // $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
+            // $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
             // $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
             // $formulir->update([
             //     'ijazah' => $resultIjazah,
@@ -298,28 +298,28 @@ class FormController extends Controller
         $imageRapot  = $request->file('rapot');
         $imagePrestasi  = $request->file('file_prestasi');
 
-        // $resultIjazah = '';
-        // $resultPhoto = '';
-        // $resultPrestasi = '';
-        // $resultRapot = '';
+        $resultIjazah = '';
+        $resultPhoto = '';
+        $resultPrestasi = '';
+        $resultRapot = '';
 
-        // if ($request->hasfile('photo')) {
-        //     $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
-        // }
-        // if ($request->hasfile('ijazah')) {
-        //     $resultPhoto = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
-        // }
-        // if ($request->hasfile('rapot')) {
-        //     $resultPhoto = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
-        // }
-        // if ($request->hasfile('file_prestasi')) {
-        //     $resultPhoto = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
-        // }
+        if ($request->hasfile('photo')) {
+            $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
+        }
+        if ($request->hasfile('ijazah')) {
+            $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
+        }
+        if ($request->hasfile('rapot')) {
+            $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
+        }
+        if ($request->hasfile('file_prestasi')) {
+            $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
+        }
         // kenapa?
-        $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
-        $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
-        $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
-        $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
+        // $resultIjazah = CloudinaryStorage::upload($imageIjazah->getRealPath(), $imageIjazah->getClientOriginalName());
+        // $resultRapot = CloudinaryStorage::upload($imageRapot->getRealPath(), $imageRapot->getClientOriginalName());
+        // $resultPrestasi = CloudinaryStorage::upload($imagePrestasi->getRealPath(), $imagePrestasi->getClientOriginalName());
+        // $resultPhoto = CloudinaryStorage::upload($imagePhoto->getRealPath(), $imagePhoto->getClientOriginalName());
 
         $formulir = Formulir::create([
             'full_name' => $request->full_name,
