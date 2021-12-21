@@ -52,21 +52,18 @@
 
 <body>
     {{-- data-background-color="dark" --}}
-
     <div class="wrapper">
+        @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+
 
         @include('user.navbar')
-
-        <!-- Sidebar -->
         @include('user.sidebar')
-        <!-- End Sidebar -->
+
+
 
         <div class="main-panel">
             @yield('content')
-
-
-
-            <footer class="footer">
+            {{-- <footer class="footer">
                 <div class="container-fluid">
                     <nav class="pull-left">
                         <ul class="nav">
@@ -92,11 +89,10 @@
                             href="https://www.themekita.com">ThemeKita</a>
                     </div>
                 </div>
-            </footer>
+            </footer> --}}
         </div>
+
     </div>
-
-
     {{-- sweetallert --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
