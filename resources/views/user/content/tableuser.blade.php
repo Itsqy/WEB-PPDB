@@ -62,17 +62,17 @@
 
                                                     </td>
                                                     <td>
-                                                        <img src="{{  . $form->ijazah }}" alt=""
+                                                        <img src="{{ $form->ijazah }}" alt=""
                                                             style="max-width: 100px !important; border-radius:5px;">
 
                                                     </td>
                                                     <td>
-                                                        <img src="{{  . $form->rapot }}" alt=""
+                                                        <img src="{{ $form->rapot }}" alt=""
                                                             style="max-width: 100px !important; border-radius:5px;">
 
                                                     </td>
                                                     <td>
-                                                        <img src="{{  . $form->file_prestasi }}" alt=""
+                                                        <img src="{{ $form->file_prestasi }}" alt=""
                                                             style="max-width: 100px !important; border-radius:5px;">
 
                                                     </td>
