@@ -56,7 +56,7 @@
                         <button type="submit" class="btn btn-success btn-block btn-flat">Log In</button>
                     </div>
                     <div class="col-xs-4" style="margin-left: 30%">
-                        <a href="/" class="btn btn-primary btn-block btn-flat">Sign In</a>
+                        <a href="/" class="btn btn-primary btn-block btn-flat">Sign Up</a>
                     </div>
                     <!-- /.col -->
                 </div>
